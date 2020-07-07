@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>Home Page</title></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="home.js"></script>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1>Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<button id="shw-pst">show posts</button><br>
+<table id="pst-nf">
+    <thead>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<button id="shw-cmt">show post's comment</button>
+<table id="cmt-nf">
+    <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>body</th>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
+
+
