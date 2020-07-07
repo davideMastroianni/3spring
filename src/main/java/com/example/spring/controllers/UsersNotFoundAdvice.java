@@ -1,6 +1,7 @@
-package com.example.spring;
+package com.example.spring.controllers;
 
 
+import com.example.spring.exceptions.UsersNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,4 +1,4 @@
-package com.example.spring;
+package com.example.spring.exceptions;
 
 public class UsersNotFoundException extends RuntimeException {
     public UsersNotFoundException(Long id) {

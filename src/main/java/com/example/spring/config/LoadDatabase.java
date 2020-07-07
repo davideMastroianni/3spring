@@ -1,6 +1,7 @@
-package com.example.spring;
+package com.example.spring.config;
 
-
+import com.example.spring.repositories.UserRepository;
+import com.example.spring.model.Users;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
