@@ -21,14 +21,21 @@ public class Business {
         this.restTemplate = restTemplateBuilder.rootUri("http://jsonplaceholder.typicode.com").build();
     }
 
-    public Post getPosts(Long userId) {
-        String uri = "/posts/"+userId;
+    public Post getPostById(Long postId) {
+        String uri = "/posts/"+postId;
         Post post = restTemplate.getForObject(uri, Post.class);
         return post;
     }
 
-    public List<Comment> getComments(Long userId) {
-        String uri = "/posts/"+userId+"/comments";
+    public List<Post> getPosts(Long userId) {
+        String uri = "/posts?userId="+userId;
+        ResponseEntity<List<Post>> responseComment = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {});
+        List<Post> postList = responseComment.getBody();
+        return postList;
+    }
+
+    public List<Comment> getComments(Long postId) {
+        String uri = "/posts/"+postId+"/comments";
         ResponseEntity<List<Comment>> responseComment = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Comment>>() {});
         List<Comment> commentList = responseComment.getBody();
         return commentList;

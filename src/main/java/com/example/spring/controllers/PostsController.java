@@ -6,6 +6,7 @@ import com.example.spring.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,14 +23,20 @@ public class PostsController {
 
     // Single item
 
-    @GetMapping("/posts/{userId}")
-    Post getPost(@PathVariable Long userId) {
-        return business.getPosts(userId);
+    @GetMapping("/posts/{postId}")
+    Post getPostById(@PathVariable Long postId) {
+        return business.getPostById(postId);
     }
 
-    @GetMapping("/posts/{userId}/comments")
-    List<Comment> getPostComments(@PathVariable Long userId) {
-        return business.getComments(userId);
+
+    @GetMapping("/posts")
+    List<Post> getPosts(@RequestParam Long user) {
+        return business.getPosts(user);
+    }
+
+    @GetMapping("/posts/{postId}/comments")
+    List<Comment> getPostComments(@PathVariable Long postId) {
+        return business.getComments(postId);
     }
 
 }
