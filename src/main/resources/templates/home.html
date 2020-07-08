@@ -10,7 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="home.js"></script>
 <body>
-<h1>Welcome to <span th:text="${appName}">Our App</span></h1>
-<p>Click <a th:href="@{/user}">here</a> to login in.</p>
+<h1>Welcome [[${#httpServletRequest.remoteUser}]]</h1>
+<div sec:authorize="!isFullyAuthenticated()">
+    <p>Click <a th:href="@{/user}">here</a> to login in.</p>
+</div>
+<div sec:authorize="isFullyAuthenticated()">
+    <p>Click <a th:href="@{/user}">here</a> to see your posts.</p>
+</div>
 </body>
 </html>
