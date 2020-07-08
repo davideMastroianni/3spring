@@ -1,6 +1,9 @@
+var base_url = window.location.origin;
+var name_url = base_url + "/3spring"
+
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:8080/posts?user=1"
+        url: name_url + "/api/posts?user=1"
     }).then(function(data) {
        console.log(data);
        data.forEach(d => {
@@ -10,7 +13,7 @@ $(document).ready(function() {
            console.log(this)
            var id = jQuery(this).data("id");
            $.ajax({
-               url: "http://localhost:8080/posts/"+id
+               url: name_url + "/api/posts/"+id
            }).then(function(data) {
               console.log(data);
               $('#pst-nf tr:last').remove();
@@ -23,7 +26,7 @@ $(document).ready(function() {
     $("#shw-cmt").click(function() {
         var id = $('#shw-cmt').data("id")
         $.ajax({
-            url: "http://localhost:8080/posts/"+id+"/comments"
+            url: name_url + "/api/posts/"+id+"/comments"
         }).then(function(data) {
             console.log(data)
             $('#cmt-nf tbody tr').remove();
