@@ -1,4 +1,4 @@
-package com.example.spring.core;
+package com.example.spring.services;
 
 import com.example.spring.entities.Comment;
 import com.example.spring.entities.Post;
@@ -13,11 +13,11 @@ import java.util.List;
 
 
 @Service
-public class Business {
+public class PostsService {
 
     private final RestTemplate restTemplate;
 
-    public Business(RestTemplateBuilder restTemplateBuilder) {
+    public PostsService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder.rootUri("http://jsonplaceholder.typicode.com").build();
     }
 
