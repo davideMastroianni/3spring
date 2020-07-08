@@ -1,7 +1,7 @@
 package com.example.spring.config;
 
 import com.example.spring.repositories.UserRepository;
-import com.example.spring.model.Users;
+import com.example.spring.entities.Users;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -17,8 +17,8 @@ public class LoadDatabase {
     CommandLineRunner initDatabase(UserRepository repository) {
 
         return args -> {
-            log.info("Preloading " + repository.save(new Users((long) 1, "Leanne Graham", "Bret", "Sincere@april.biz")));
-            log.info("Preloading " + repository.save(new Users((long) 2, "Ervin Howell", "Antonette", "Shanna@melissa.tv")));
+            log.info("Preloading " + repository.save(new Users((long) 1, "Leanne Graham", "Bret", "Sincere@april.biz", "password", false, "USER")));
+            log.info("Preloading " + repository.save(new Users((long) 2, "Ervin Howell", "Antonette", "Shanna@melissa.tv", "12345", false, "USER")));
         };
     }
 }

@@ -1,7 +1,7 @@
 package com.example.spring.core;
 
-import com.example.spring.model.Comment;
-import com.example.spring.model.Post;
+import com.example.spring.entities.Comment;
+import com.example.spring.entities.Post;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

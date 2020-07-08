@@ -1,8 +1,8 @@
 package com.example.spring.controllers;
 
 import com.example.spring.core.Business;
-import com.example.spring.model.Comment;
-import com.example.spring.model.Post;
+import com.example.spring.entities.Comment;
+import com.example.spring.entities.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

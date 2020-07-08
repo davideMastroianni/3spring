@@ -1,4 +1,4 @@
-package com.example.spring.model;
+package com.example.spring.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

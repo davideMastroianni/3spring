@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.spring.repositories.UserRepository;
 import com.example.spring.exceptions.UsersNotFoundException;
-import com.example.spring.model.Users;
+import com.example.spring.entities.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

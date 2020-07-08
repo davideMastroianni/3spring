@@ -1,4 +1,4 @@
-package com.example.spring.model;
+package com.example.spring.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,5 +17,8 @@ public class Users {
     private String name;
     private String username;
     private String email;
+    private String password;
+    private boolean isActive;
+    private String roles;
 
 }
