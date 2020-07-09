@@ -2,6 +2,7 @@ package com.example.spring.services;
 
 import com.example.spring.entities.Comment;
 import com.example.spring.entities.Post;
+import com.example.spring.exceptions.PostsNotFoundException;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -24,6 +25,9 @@ public class PostsService {
     public Post getPostById(Long postId) {
         String uri = "/posts/"+postId;
         Post post = restTemplate.getForObject(uri, Post.class);
+        if (post == null) {
+            throw new PostsNotFoundException(postId);
+        }
         return post;
     }
 
@@ -31,6 +35,9 @@ public class PostsService {
         String uri = "/posts?userId="+userId;
         ResponseEntity<List<Post>> responseComment = restTemplate.exchange(uri, HttpMethod.GET, null, new ParameterizedTypeReference<List<Post>>() {});
         List<Post> postList = responseComment.getBody();
+        if (postList == null) {
+            throw new PostsNotFoundException(userId);
+        }
         return postList;
     }
 

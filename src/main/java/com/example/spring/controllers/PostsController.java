@@ -1,5 +1,6 @@
 package com.example.spring.controllers;
 
+import com.example.spring.exceptions.PostsNotFoundException;
 import com.example.spring.services.PostsService;
 import com.example.spring.entities.Comment;
 import com.example.spring.entities.Post;
